@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandeep Kumar Bodapudi - Resume</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0; /* Forces the browser to hide date, URL, and title headers */
+        }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.3;
+            color: #111;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 12mm 15mm;
+            background: white;
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin: 0 0 4px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .contact-info {
+            text-align: center;
+            font-size: 13px;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        .contact-info a {
+            color: #033cf7;
+            text-decoration: none;
+        }
+        h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            border-bottom: 1.5px solid #111;
+            padding-bottom: 2px;
+            margin-top: 14px;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        h3 {
+            font-size: 14px;
+            margin: 0;
+            display: inline-block;
+            font-weight: 600;
+        }
+        .date {
+            float: right;
+            font-size: 13px;
+            font-style: italic;
+            color: #444;
+        }
+        .subtitle {
+            font-size: 13px;
+            font-style: italic;
+            margin-bottom: 3px;
+            color: #444;
+        }
+        p {
+            font-size: 13px;
+            margin: 0 0 8px 0;
+            text-align: justify;
+        }
+        ul {
+            margin: 4px 0 10px 0;
+            padding-left: 18px;
+        }
+        li {
+            font-size: 13px;
+            margin-bottom: 3px;
+        }
+        .project-tech {
+            font-style: italic;
+            font-size: 12px;
+            color: #555;
+            margin-left: 4px;
+        }
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4f46e5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background 0.2s;
+        }
+        .download-btn:hover {
+            background: #4338ca;
+        }
+        .skills-list {
+            font-size: 13px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .skills-list li {
+            margin-bottom: 2px;
+        }
+        @media print {
+            .download-btn { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="download-btn" onclick="window.print()">Download as PDF</button>
+
+    <h1>Sandeep Kumar Bodapudi</h1>
+    <div class="contact-info">
+        Kakinada, AP | +91 7075196267 | <a href="mailto:sandeepkumarbodapudi07@gmail.com">sandeepkumarbodapudi07@gmail.com</a> | <a href="https://linkedin.com/in/sandeepkumarbodapudi">LinkedIn</a> | <a href="https://github.com/sandeep-bodapudi">GitHub</a>
+    </div>
+
+    <h2>Professional Summary</h2>
+    <p>Frontend developer with 1 year of practical experience building and shipping web applications. I build products that solve actual business problems, including a live e-commerce site, an internal employee management system, and progressive web apps. Core stack: React.js, JavaScript, Tailwind CSS. Looking to join a product-driven team to contribute to scalable web applications.</p>
+
+    <h2>Technical Skills</h2>
+    <ul class="skills-list">
+        <li><strong>Languages:</strong> JavaScript (ES6+), TypeScript, HTML5, CSS3</li>
+        <li><strong>Frontend & Styling:</strong> React.js, Context API, Vite, Tailwind CSS, Progressive Web Apps (PWA), Responsive Design</li>
+        <li><strong>Backend & Tools:</strong> REST API Integration, Git, GitHub, Postman, IndexedDB</li>
+    </ul>
+
+    <h2>Work Experience</h2>
+    <div>
+        <h3>Vyasthra Collections Pvt Ltd</h3> <span class="date">Oct 2025 – Feb 2026</span>
+        <div class="subtitle">Web Developer</div>
+        <ul>
+            <li>Built an e-commerce platform from scratch, including product browsing, shopping cart, secure checkout, and a custom admin panel for inventory management.</li>
+            <li>Diagnosed and fixed mobile performance bottlenecks, noticeably improving page load times for phone users.</li>
+            <li>Developed a dedicated internal Employee Management System to replace manual spreadsheet-based commission tracking, saving administrative time.</li>
+        </ul>
+    </div>
+
+    <h2>Projects</h2>
+    <div>
+        <h3>Team Task Manager</h3> <span class="project-tech">| React.js, Node.js, MongoDB, PWA</span>
+        <ul>
+            <li>Built a full-stack collaborative task management application for teams with role-based user authentication.</li>
+            <li>Created project tracking dashboards with real-time status updates and deployed as an installable PWA using Railway.</li>
+        </ul>
+    </div>
+    
+    <div>
+        <h3>DailyMark - Finance Tracker</h3> <span class="project-tech">| JavaScript, PWA, IndexedDB</span>
+        <ul>
+            <li>Developed a minimalist, mobile-first personal finance tracker designed for fast daily usage.</li>
+            <li>Implemented offline functionality using IndexedDB so transaction data is safely stored without internet access.</li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Vyasthra E-Commerce Store</h3> <span class="project-tech">| React.js, Tailwind CSS, REST API</span>
+        <ul>
+            <li>Built the full digital storefront for a local clothing brand, focusing on a clean UI and secure checkout flow.</li>
+            <li>Added a custom spin-the-wheel promotional feature in JavaScript for their launch day to increase engagement.</li>
+        </ul>
+    </div>
+
+    <h2>Education</h2>
+    <div>
+        <h3>B.Sc. in Computer Science</h3> <span class="date">2022 – 2025</span>
+        <div class="subtitle">Aditya Degree College, Kakinada | 79%</div>
+    </div>
+    <div>
+        <h3>Intermediate</h3> <span class="date">2020 – 2022</span>
+        <div class="subtitle">Pragati Junior College, Kirlampudi | 75%</div>
+    </div>
+    <div>
+        <h3>SSC</h3> <span class="date">2019 – 2020</span>
+        <div class="subtitle">Sri Prathiba EM School, Dharmavaram | 91%</div>
+    </div>
+    <div>
+        <h2>Certifications</h2> 
+        <ul>
+            <li>HTML5 Application Development (Certiport)</li> 
+            <li>Programming Essentials in C (Cisco Academy)</li>
+            <li>Cloud Computing Fundamentals (NPTEL)</li>
+        </ul>
+    </div>
+
+</body>
+</html>
