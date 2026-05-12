@@ -3,7 +3,7 @@
 A professional, production-ready developer portfolio built to showcase real-world shipping experience, web applications, and technical skills. Designed with a clean SaaS-style aesthetic, focusing on performance, mobile responsiveness, and modern UI/UX principles.
 
 ## 🚀 Live Demo
-**[Insert your Vercel Live Link Here]**
+**[portfolio-git-main-sandeep-bodapudis-projects.vercel.app](https://portfolio-git-main-sandeep-bodapudis-projects.vercel.app/)**
 
 ## 💻 Tech Stack
 - **Framework:** React.js (Vite)
