@@ -8,7 +8,7 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     company: 'Radha Real Home Properties',
-    role: 'Technical Lead',
+    role: 'Technology Lead (Founding)',
     duration: 'Nov 2026 – Present',
     achievements: [
       'Own and maintain the company CRM that runs employee management and the end-to-end lead flow.',
