@@ -11,7 +11,7 @@ export default function About() {
         >
           <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">About Me</h2>
           <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
-            Frontend developer with experience building business applications and responsive web interfaces using React.js and JavaScript. Interested in scalable frontend systems, UI performance, and product-focused development. I hold a B.Sc. in Computer Science and bring practical, hands-on experience from shipping real e-commerce and internal management systems.
+            Gen AI developer and technical lead with experience building business applications, from CRMs and internal management systems to AI-powered products, using React.js and JavaScript. Interested in practical AI, scalable systems, and product-focused development. I hold a B.Sc. in Computer Science and bring practical, hands-on experience from shipping real e-commerce and internal management systems.
           </p>
         </motion.div>
       </div>

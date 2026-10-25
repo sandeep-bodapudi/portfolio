@@ -7,14 +7,24 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    company: 'Radha Real Home Properties',
+    role: 'Technical Lead',
+    duration: 'Nov 2026 – Present',
+    achievements: [
+      'Own and maintain the company CRM that runs employee management and the end-to-end lead flow.',
+      'Plan and build additional internal applications as the business needs them.',
+      'Train employees to use the CRM in their daily work.'
+    ]
+  },
+  {
     company: 'Onebridge Infotech',
     role: 'Gen AI Developer Intern',
     duration: 'Sep 2026 – Oct 2026',
     achievements: [
-      'Tested the company\'s AI-powered SaaS product and built three applications from scratch.',
-      'FinOps: a multilingual financial management application.',
-      'Internal business-data scraper: collects business listings from maps using free tools only, with no paid APIs.',
-      'Onebridge Grid: prototype of a social platform for business professionals.'
+      'Tested the company\'s AI-powered SaaS product, then built three applications from scratch.',
+      'FinOps: a financial management application that works across multiple languages.',
+      'Business-data scraper: an internal tool that gathers business listings from maps using free tools only, with no paid APIs.',
+      'Onebridge Grid: a prototype for a social media platform aimed at business professionals.'
     ]
   },
   {

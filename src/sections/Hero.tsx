@@ -33,11 +33,11 @@ export default function Hero() {
             </div>
             <h2 className="text-slate-500 dark:text-slate-400 font-semibold tracking-wide uppercase text-sm mb-4">Sandeep Kumar Bodapudi</h2>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight mb-6">
-              Frontend Developer Building <br className="hidden sm:block" />
+              Gen AI Developer Building <br className="hidden sm:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">Real-World Web Apps</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-xl">
-              Focused on responsive interfaces, scalable frontend systems, and business-driven applications. I build products that solve actual problems, not just templates.
+              Focused on AI-powered products, full-stack business applications, and clean user interfaces. I build products that solve actual problems, not just templates.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -103,7 +103,7 @@ export default function Hero() {
                 </div>
                 <div className="flex">
                   <span className="text-slate-300 dark:text-slate-600 select-none pr-4 text-right w-8">7</span>
-                  <span className="pl-12 text-slate-500 dark:text-slate-400">focus=<span className="text-emerald-500 dark:text-emerald-400">"Frontend Architecture"</span></span>
+                  <span className="pl-12 text-slate-500 dark:text-slate-400">focus=<span className="text-emerald-500 dark:text-emerald-400">"Gen AI Products"</span></span>
                 </div>
                 <div className="flex">
                   <span className="text-slate-300 dark:text-slate-600 select-none pr-4 text-right w-8">8</span>
