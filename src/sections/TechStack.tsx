@@ -16,8 +16,8 @@ export default function TechStack() {
         <div className="grid md:grid-cols-3 gap-6">
           {skills.map((group, gi) => (
             <Reveal key={group.category} delay={gi * 0.08}>
-              <div className="h-full rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-5 flex items-center gap-2">
+              <div className="h-full rounded-2xl border border-stone-200 dark:border-stone-800 p-6">
+                <h3 className="text-sm font-semibold uppercase tracking-widest text-stone-500 dark:text-stone-400 mb-5 flex items-center gap-2">
                   {group.category === 'Currently Learning' && <span className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />}
                   {group.category}
                 </h3>
@@ -33,7 +33,7 @@ export default function TechStack() {
                       key={item}
                       variants={{ hidden: { opacity: 0, scale: 0.8 }, show: { opacity: 1, scale: 1 } }}
                       whileHover={{ y: -2 }}
-                      className="px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-300"
+                      className="px-3 py-1.5 rounded-full border border-stone-200 dark:border-stone-700 text-sm font-medium text-stone-700 dark:text-stone-300"
                     >
                       {item}
                     </motion.span>

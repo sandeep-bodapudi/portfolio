@@ -38,11 +38,11 @@ export default function Contact() {
 
 
   return (
-    <section id="contact" className="py-20 bg-slate-50 dark:bg-slate-900/50">
+    <section id="contact" className="py-20 bg-stone-100/70 dark:bg-stone-900/40">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Get in touch</h2>
-          <p className="text-slate-600 dark:text-slate-400">Have a project in mind or want to know more about my work? Send me a message and I'll get back to you.</p>
+          <h2 className="text-3xl font-bold text-stone-900 dark:text-white mb-4">Get in touch</h2>
+          <p className="text-stone-600 dark:text-stone-400">Have a project in mind or want to know more about my work? Send me a message and I'll get back to you.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -53,14 +53,14 @@ export default function Contact() {
             className="flex flex-col justify-center"
           >
             <div className="glass-card p-8">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Contact Information</h3>
+              <h3 className="text-xl font-bold text-stone-900 dark:text-white mb-6">Contact Information</h3>
               <div className="space-y-6">
-                <a href="mailto:sandeepkumarbodapudi@gmail.com" className="flex items-center gap-4 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
-                  <div className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-primary">
+                <a href="mailto:sandeepkumarbodapudi@gmail.com" className="flex items-center gap-4 text-stone-600 dark:text-stone-400 hover:text-primary dark:hover:text-primary transition-colors">
+                  <div className="p-3 bg-stone-100 dark:bg-stone-800 rounded-lg text-primary">
                     <Mail size={24} />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-slate-900 dark:text-white">Email</p>
+                    <p className="text-sm font-medium text-stone-900 dark:text-white">Email</p>
                     <p>sandeepkumarbodapudi@gmail.com</p>
                   </div>
                 </a>
@@ -75,21 +75,21 @@ export default function Contact() {
           >
             <form onSubmit={handleSubmit} className="glass-card p-8 space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Name</label>
-                <input required type="text" id="name" name="name" className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all dark:text-white" placeholder="John Doe" />
+                <label htmlFor="name" className="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-2">Name</label>
+                <input required type="text" id="name" name="name" className="w-full px-4 py-3 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all dark:text-white" placeholder="John Doe" />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Email</label>
-                <input required type="email" id="email" name="email" className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all dark:text-white" placeholder="john@company.com" />
+                <label htmlFor="email" className="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-2">Email</label>
+                <input required type="email" id="email" name="email" className="w-full px-4 py-3 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all dark:text-white" placeholder="john@company.com" />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Message</label>
-                <textarea required id="message" name="message" rows={4} className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all resize-none dark:text-white" placeholder="Let's build something..."></textarea>
+                <label htmlFor="message" className="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-2">Message</label>
+                <textarea required id="message" name="message" rows={4} className="w-full px-4 py-3 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all resize-none dark:text-white" placeholder="Let's build something..."></textarea>
               </div>
               <button 
                 type="submit" 
                 disabled={status === 'submitting'}
-                className="w-full py-3 px-4 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
+                className="w-full py-3 px-4 bg-primary text-white dark:text-stone-950 font-medium rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
               >
                 {status === 'idle' ? (
                   <><Send size={18} /> Send Message</>

@@ -8,11 +8,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#4f46e5', // Indigo 600
-        secondary: '#64748b', // Slate 500
-        dark: '#0f172a', // Slate 900
-        darker: '#020617', // Slate 950
-        light: '#f8fafc', // Slate 50
+        primary: 'rgb(var(--primary) / <alpha-value>)',
+        secondary: '#78716c', // Stone 500
+        dark: '#1c1917', // Stone 900
+        darker: '#0c0a09', // Stone 950
+        light: '#fafaf9', // Stone 50
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

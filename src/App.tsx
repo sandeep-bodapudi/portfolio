@@ -44,7 +44,7 @@ function App() {
         <About />
         <Contact />
       </main>
-      <footer className="py-8 text-center text-sm text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800 mt-20">
+      <footer className="py-8 text-center text-sm text-stone-500 dark:text-stone-400 border-t border-stone-200 dark:border-stone-800 mt-20">
         <p>© {new Date().getFullYear()} Sandeep Kumar Bodapudi</p>
       </footer>
     </div>
