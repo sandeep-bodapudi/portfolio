@@ -53,10 +53,10 @@ export default function Navbar({ darkMode, toggleDarkMode }: { darkMode: boolean
           </nav>
 
           <div className="flex items-center gap-4 md:hidden">
-            <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+            <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Dark Mode">
               {darkMode ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-slate-600" />}
             </button>
-            <button onClick={() => setIsOpen(!isOpen)} className="text-slate-900 dark:text-white p-2">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-slate-900 dark:text-white p-2" aria-label={isOpen ? 'Close menu' : 'Open menu'} aria-expanded={isOpen}>
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>

@@ -48,10 +48,10 @@ export default function Hero() {
                 Resume
               </a>
               <div className="flex items-center gap-2 ml-2">
-                <a href="https://github.com/sandeep-bodapudi" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg border border-slate-200 dark:border-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors shadow-sm">
+                <a href="https://github.com/sandeep-bodapudi" aria-label="GitHub profile" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg border border-slate-200 dark:border-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors shadow-sm">
                   <Github size={20} />
                 </a>
-                <a href="https://linkedin.com/in/sandeepkumarbodapudi" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg border border-slate-200 dark:border-slate-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors shadow-sm">
+                <a href="https://linkedin.com/in/sandeepkumarbodapudi" aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg border border-slate-200 dark:border-slate-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors shadow-sm">
                   <Linkedin size={20} />
                 </a>
               </div>

@@ -2,17 +2,41 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Send } from 'lucide-react';
 
-export default function Contact() {
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+const CONTACT_EMAIL = 'sandeepkumarbodapudi07@gmail.com';
+// Formspree / Web3Forms style endpoint that accepts a JSON POST. Set VITE_CONTACT_ENDPOINT at build time.
+const CONTACT_ENDPOINT = import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined;
 
-  const handleSubmit = (e: React.FormEvent) => {
+export default function Contact() {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+
+    if (!CONTACT_ENDPOINT) {
+      const subject = encodeURIComponent(`Portfolio message from ${data.name}`);
+      const body = encodeURIComponent(`${data.message}\n\n${data.name} (${data.email})`);
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+      return;
+    }
+
     setStatus('submitting');
-    // We can replace this with actual EmailJS logic later
-    setTimeout(() => setStatus('success'), 1500);
+    try {
+      const res = await fetch(CONTACT_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error(`Request failed: ${res.status}`);
+      form.reset();
+      setStatus('success');
+    } catch {
+      setStatus('error');
+    }
   };
 
-  
+
   return (
     <section id="contact" className="py-20 bg-slate-50 dark:bg-slate-900/50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,29 +76,36 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="glass-card p-8 space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Name</label>
-                <input required type="text" id="name" className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all dark:text-white" placeholder="John Doe" />
+                <input required type="text" id="name" name="name" className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all dark:text-white" placeholder="John Doe" />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Email</label>
-                <input required type="email" id="email" className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all dark:text-white" placeholder="john@company.com" />
+                <input required type="email" id="email" name="email" className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all dark:text-white" placeholder="john@company.com" />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Message</label>
-                <textarea required id="message" rows={4} className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all resize-none dark:text-white" placeholder="Let's build something..."></textarea>
+                <textarea required id="message" name="message" rows={4} className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all resize-none dark:text-white" placeholder="Let's build something..."></textarea>
               </div>
               <button 
                 type="submit" 
-                disabled={status !== 'idle'}
+                disabled={status === 'submitting'}
                 className="w-full py-3 px-4 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
               >
                 {status === 'idle' ? (
                   <><Send size={18} /> Send Message</>
                 ) : status === 'submitting' ? (
                   'Sending...'
-                ) : (
+                ) : status === 'success' ? (
                   'Message Sent!'
+                ) : (
+                  <><Send size={18} /> Try Again</>
                 )}
               </button>
+              {status === 'error' && (
+                <p role="alert" className="text-sm text-red-600 dark:text-red-400">
+                  Couldn't send your message. Please try again or email {CONTACT_EMAIL} directly.
+                </p>
+              )}
             </form>
           </motion.div>
         </div>
