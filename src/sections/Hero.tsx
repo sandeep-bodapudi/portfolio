@@ -27,10 +27,6 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 dark:bg-primary/20 text-primary mb-6 border border-primary/20">
-              <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
-              <span className="text-xs font-semibold tracking-wide uppercase">Available for work</span>
-            </div>
             <h2 className="text-slate-500 dark:text-slate-400 font-semibold tracking-wide uppercase text-sm mb-4">Sandeep Kumar Bodapudi</h2>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight mb-6">
               Gen AI Developer Building <br className="hidden sm:block" />
