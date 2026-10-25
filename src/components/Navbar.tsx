@@ -27,7 +27,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: { darkMode: boolean
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass-nav py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <a href="#home" className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+          <a href="#home" className="text-xl font-bold tracking-tight text-stone-900 dark:text-white">
             SKB.
           </a>
 
@@ -35,24 +35,24 @@ export default function Navbar({ darkMode, toggleDarkMode }: { darkMode: boolean
             <ul className="flex items-center gap-6">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-primary transition-colors">
+                  <a href={link.href} className="text-sm font-medium text-stone-600 hover:text-primary dark:text-stone-300 dark:hover:text-primary transition-colors">
                     {link.name}
                   </a>
                 </li>
               ))}
             </ul>
-            <div className="flex items-center gap-4 border-l border-slate-200 dark:border-slate-700 pl-4">
-              <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Dark Mode">
-                {darkMode ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-slate-600" />}
+            <div className="flex items-center gap-4 border-l border-stone-200 dark:border-stone-700 pl-4">
+              <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors" aria-label="Toggle Dark Mode">
+                {darkMode ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-stone-600" />}
               </button>
             </div>
           </nav>
 
           <div className="flex items-center gap-4 md:hidden">
-            <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Dark Mode">
-              {darkMode ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-slate-600" />}
+            <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors" aria-label="Toggle Dark Mode">
+              {darkMode ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-stone-600" />}
             </button>
-            <button onClick={() => setIsOpen(!isOpen)} className="text-slate-900 dark:text-white p-2" aria-label={isOpen ? 'Close menu' : 'Open menu'} aria-expanded={isOpen}>
+            <button onClick={() => setIsOpen(!isOpen)} className="text-stone-900 dark:text-white p-2" aria-label={isOpen ? 'Close menu' : 'Open menu'} aria-expanded={isOpen}>
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -65,7 +65,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: { darkMode: boolean
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full glass-nav border-b border-slate-200 dark:border-slate-800 md:hidden"
+            className="absolute top-full left-0 w-full glass-nav border-b border-stone-200 dark:border-stone-800 md:hidden"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
               {navLinks.map((link) => (
@@ -73,7 +73,7 @@ export default function Navbar({ darkMode, toggleDarkMode }: { darkMode: boolean
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-3 text-base font-medium text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg"
+                  className="block px-3 py-3 text-base font-medium text-stone-700 dark:text-stone-200 hover:text-primary dark:hover:text-primary hover:bg-stone-50 dark:hover:bg-stone-800/50 rounded-lg"
                 >
                   {link.name}
                 </a>

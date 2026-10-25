@@ -30,7 +30,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="absolute -top-20 -left-20 w-96 h-96 bg-primary rounded-full filter blur-[140px] opacity-25 dark:opacity-20 animate-blob pointer-events-none" />
-      <div className="absolute bottom-0 -right-20 w-96 h-96 bg-blue-400 rounded-full filter blur-[140px] opacity-25 dark:opacity-15 animate-blob animation-delay-2000 pointer-events-none" />
+      <div className="absolute bottom-0 -right-20 w-96 h-96 bg-amber-400 rounded-full filter blur-[140px] opacity-25 dark:opacity-15 animate-blob animation-delay-2000 pointer-events-none" />
       <div className="absolute inset-0 bg-grid-pattern [mask-image:linear-gradient(180deg,white,transparent)] opacity-50 dark:opacity-30 pointer-events-none" />
 
       <motion.div variants={container} initial="hidden" animate="show" className="relative max-w-6xl mx-auto w-full pt-28 pb-20">
@@ -38,7 +38,7 @@ export default function Hero() {
           {profile.title}
         </motion.p>
 
-        <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tighter text-slate-900 dark:text-white leading-[0.95] mb-8">
+        <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tighter text-stone-900 dark:text-white leading-[0.95] mb-8">
           {profile.name.map((line) => (
             <span key={line} className="block overflow-hidden pb-2">
               <motion.span variants={word} className="block">{line}</motion.span>
@@ -46,12 +46,12 @@ export default function Hero() {
           ))}
         </h1>
 
-        <motion.p variants={fadeUp} className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed mb-6">
+        <motion.p variants={fadeUp} className="text-xl md:text-2xl text-stone-600 dark:text-stone-400 max-w-2xl leading-relaxed mb-6">
           {profile.intro}
         </motion.p>
 
-        <motion.div variants={fadeUp} className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-lg md:text-xl font-semibold text-slate-900 dark:text-white mb-12">
-          <span className="text-slate-400 dark:text-slate-500 font-normal">Currently thinking about</span>
+        <motion.div variants={fadeUp} className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-lg md:text-xl font-semibold text-stone-900 dark:text-white mb-12">
+          <span className="text-stone-400 dark:text-stone-500 font-normal">Currently thinking about</span>
           <span className="relative inline-flex overflow-hidden h-8 items-center">
             <AnimatePresence mode="wait">
               <motion.span
@@ -69,8 +69,8 @@ export default function Hero() {
         </motion.div>
 
         <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
-          <a href="#work" className="group px-6 py-3 bg-primary text-white font-medium rounded-full hover:bg-primary/90 shadow-lg shadow-primary/30 transition-all flex items-center gap-2">
-            See my work <ArrowDown size={18} className="transition-transform group-hover:translate-y-1" />
+          <a href="#work" className="group px-6 py-3 bg-primary text-white dark:text-stone-950 font-medium rounded-full hover:bg-primary/90 shadow-lg shadow-primary/30 transition-all flex items-center gap-2">
+            See my work <ArrowDown size={18} className="transition-transform group-hover:transtone-y-1" />
           </a>
           {[
             { href: profile.github, label: 'GitHub profile', Icon: Github },
@@ -84,7 +84,7 @@ export default function Hero() {
               target={href.startsWith('http') ? '_blank' : undefined}
               rel="noopener noreferrer"
               whileHover={{ y: -3 }}
-              className="p-3 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:text-primary hover:border-primary transition-colors"
+              className="p-3 rounded-full border border-stone-200 dark:border-stone-700 text-stone-600 dark:text-stone-300 hover:text-primary hover:border-primary transition-colors"
             >
               <Icon size={20} />
             </motion.a>

@@ -14,9 +14,9 @@ export default function SectionHeading({ index, label, title }: { index: string;
           style={{ originX: 0 }}
           className="h-px w-12 bg-primary"
         />
-        <span className="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">{label}</span>
+        <span className="text-sm font-semibold uppercase tracking-widest text-stone-500 dark:text-stone-400">{label}</span>
       </div>
-      <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">{title}</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-stone-900 dark:text-white tracking-tight">{title}</h2>
     </Reveal>
   );
 }

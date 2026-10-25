@@ -3,17 +3,24 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --primary: 15 118 110; /* teal-700 */
+  }
+  .dark {
+    --primary: 45 212 191; /* teal-400 */
+  }
+
   html, body {
     @apply antialiased selection:bg-primary/30 overflow-x-hidden w-full;
   }
 }
 
 .glass-nav {
-  @apply bg-white/80 dark:bg-darker/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800;
+  @apply bg-white/80 dark:bg-darker/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800;
 }
 
 .glass-card {
-  @apply bg-white/50 dark:bg-dark/50 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm hover:shadow-md transition-shadow;
+  @apply bg-white/50 dark:bg-dark/50 backdrop-blur-sm border border-stone-200 dark:border-stone-800 rounded-2xl shadow-sm hover:shadow-md transition-shadow;
 }
 
 .bg-grid-pattern {
