@@ -27,31 +27,24 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 dark:bg-primary/20 text-primary mb-6 border border-primary/20">
-              <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
-              <span className="text-xs font-semibold tracking-wide uppercase">Available for work</span>
-            </div>
             <h2 className="text-slate-500 dark:text-slate-400 font-semibold tracking-wide uppercase text-sm mb-4">Sandeep Kumar Bodapudi</h2>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight mb-6">
-              Frontend Developer Building <br className="hidden sm:block" />
+              Gen AI Developer Building <br className="hidden sm:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">Real-World Web Apps</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-xl">
-              Focused on responsive interfaces, scalable frontend systems, and business-driven applications. I build products that solve actual problems, not just templates.
+              Focused on AI-powered products, full-stack business applications, and clean user interfaces. I build products that solve actual problems, not just templates.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
               <a href="#projects" className="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 shadow-lg shadow-primary/30 transition-all hover:-translate-y-0.5 flex items-center gap-2">
                 View Projects <ArrowRight size={18} />
               </a>
-              <a href="/Sandeep_Resume.pdf" download className="px-6 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-medium rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors flex items-center gap-2 shadow-sm">
-                Resume
-              </a>
               <div className="flex items-center gap-2 ml-2">
-                <a href="https://github.com/sandeep-bodapudi" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg border border-slate-200 dark:border-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors shadow-sm">
+                <a href="https://github.com/sandeep-bodapudi" aria-label="GitHub profile" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg border border-slate-200 dark:border-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors shadow-sm">
                   <Github size={20} />
                 </a>
-                <a href="https://linkedin.com/in/sandeepkumarbodapudi" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg border border-slate-200 dark:border-slate-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors shadow-sm">
+                <a href="https://linkedin.com/in/sandeepkumarbodapudi" aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg border border-slate-200 dark:border-slate-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors shadow-sm">
                   <Linkedin size={20} />
                 </a>
               </div>
@@ -106,7 +99,7 @@ export default function Hero() {
                 </div>
                 <div className="flex">
                   <span className="text-slate-300 dark:text-slate-600 select-none pr-4 text-right w-8">7</span>
-                  <span className="pl-12 text-slate-500 dark:text-slate-400">focus=<span className="text-emerald-500 dark:text-emerald-400">"Frontend Architecture"</span></span>
+                  <span className="pl-12 text-slate-500 dark:text-slate-400">focus=<span className="text-emerald-500 dark:text-emerald-400">"Gen AI Products"</span></span>
                 </div>
                 <div className="flex">
                   <span className="text-slate-300 dark:text-slate-600 select-none pr-4 text-right w-8">8</span>
