@@ -41,8 +41,8 @@ export default function Contact() {
     <section id="contact" className="py-20 bg-slate-50 dark:bg-slate-900/50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Let's Connect</h2>
-          <p className="text-slate-600 dark:text-slate-400">Ready to contribute to a startup team. Let's discuss how I can help build your next product.</p>
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Get in touch</h2>
+          <p className="text-slate-600 dark:text-slate-400">Have a project in mind or want to know more about my work? Send me a message and I'll get back to you.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">

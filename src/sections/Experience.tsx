@@ -1,53 +1,49 @@
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import { experiences } from '../data/experience';
+import Reveal from '../components/Reveal';
+import SectionHeading from '../components/SectionHeading';
 
 export default function Experience() {
-  return (
-    <section id="experience" className="py-20 bg-slate-50 dark:bg-slate-900/50">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Work Experience</h2>
-        </div>
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 75%', 'end 60%'] });
+  const scaleY = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
-        <div className="space-y-8">
-          {experiences.map((exp, index) => (
-            <motion.div 
-              key={exp.company}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="relative pl-8 md:pl-0"
-            >
-              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-700 transform translate-x-32 mt-2"></div>
-              
-              <div className="md:flex gap-12 items-start">
-                <div className="md:w-32 flex-shrink-0 pt-1 hidden md:block text-right">
-                  <span className="text-sm font-medium text-slate-500 dark:text-slate-400">{exp.duration}</span>
-                </div>
-                
-                <div className="absolute left-0 top-2 w-2 h-2 rounded-full bg-primary md:hidden"></div>
-                <div className="hidden md:block absolute left-32 top-2 w-2 h-2 rounded-full bg-primary transform -translate-x-1/2"></div>
-                
-                <div className="glass-card p-6 flex-grow">
-                  <div className="md:hidden mb-2">
-                    <span className="text-xs font-medium text-slate-500 dark:text-slate-400">{exp.duration}</span>
-                  </div>
+  return (
+    <section id="experience" className="py-24 bg-slate-50 dark:bg-slate-900/40">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeading index="02" label="Experience" title="Where I've worked" />
+
+        <div ref={ref} className="relative pl-8 md:pl-10">
+          <div className="absolute left-0 top-2 bottom-2 w-px bg-slate-200 dark:bg-slate-800" />
+          <motion.div style={{ scaleY, originY: 0 }} className="absolute left-0 top-2 bottom-2 w-px bg-primary" />
+
+          <div className="space-y-12">
+            {experiences.map((exp, i) => (
+              <div key={`${exp.company}-${exp.duration}`} className="relative">
+                <motion.span
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 18 }}
+                  className="absolute -left-8 md:-left-10 top-2 h-3 w-3 -translate-x-1/2 rounded-full bg-primary ring-4 ring-slate-50 dark:ring-slate-900"
+                />
+                <Reveal delay={i * 0.05}>
+                  <p className="text-sm font-mono text-slate-500 dark:text-slate-400 mb-1">{exp.duration}</p>
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white">{exp.role}</h3>
-                  <h4 className="text-lg text-primary font-medium mb-4">{exp.company}</h4>
-                  
+                  <p className="text-primary font-medium mb-4">{exp.company}</p>
                   <ul className="space-y-2">
-                    {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="text-slate-600 dark:text-slate-400 text-sm flex gap-2">
-                        <span className="text-primary/60 mt-1">•</span>
-                        <span>{achievement}</span>
+                    {exp.achievements.map((a, j) => (
+                      <li key={j} className="flex gap-3 text-slate-600 dark:text-slate-400 leading-relaxed">
+                        <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-primary/60" />
+                        <span>{a}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
+                </Reveal>
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
