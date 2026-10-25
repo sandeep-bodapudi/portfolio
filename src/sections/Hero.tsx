@@ -44,9 +44,6 @@ export default function Hero() {
               <a href="#projects" className="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 shadow-lg shadow-primary/30 transition-all hover:-translate-y-0.5 flex items-center gap-2">
                 View Projects <ArrowRight size={18} />
               </a>
-              <a href="/Sandeep_Resume.pdf" download className="px-6 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-medium rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors flex items-center gap-2 shadow-sm">
-                Resume
-              </a>
               <div className="flex items-center gap-2 ml-2">
                 <a href="https://github.com/sandeep-bodapudi" aria-label="GitHub profile" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg border border-slate-200 dark:border-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors shadow-sm">
                   <Github size={20} />

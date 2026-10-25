@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Send } from 'lucide-react';
 
-const CONTACT_EMAIL = 'sandeepkumarbodapudi07@gmail.com';
+const CONTACT_EMAIL = 'sandeepkumarbodapudi@gmail.com';
 // Formspree / Web3Forms style endpoint that accepts a JSON POST. Set VITE_CONTACT_ENDPOINT at build time.
 const CONTACT_ENDPOINT = import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined;
 
@@ -55,13 +55,13 @@ export default function Contact() {
             <div className="glass-card p-8">
               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Contact Information</h3>
               <div className="space-y-6">
-                <a href="mailto:sandeepkumarbodapudi07@gmail.com" className="flex items-center gap-4 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
+                <a href="mailto:sandeepkumarbodapudi@gmail.com" className="flex items-center gap-4 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors">
                   <div className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-primary">
                     <Mail size={24} />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-slate-900 dark:text-white">Email</p>
-                    <p>sandeepkumarbodapudi07@gmail.com</p>
+                    <p>sandeepkumarbodapudi@gmail.com</p>
                   </div>
                 </a>
               </div>

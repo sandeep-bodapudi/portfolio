@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun, Download } from 'lucide-react';
+import { Menu, X, Moon, Sun } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -45,10 +45,6 @@ export default function Navbar({ darkMode, toggleDarkMode }: { darkMode: boolean
               <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Dark Mode">
                 {darkMode ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-slate-600" />}
               </button>
-              <a href="/Sandeep_Resume.pdf" download className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors">
-                <Download size={16} />
-                Resume
-              </a>
             </div>
           </nav>
 
@@ -82,12 +78,6 @@ export default function Navbar({ darkMode, toggleDarkMode }: { darkMode: boolean
                   {link.name}
                 </a>
               ))}
-              <div className="pt-4 px-3">
-                <a href="/Sandeep_Resume.pdf" download className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-primary text-white rounded-lg font-medium">
-                  <Download size={18} />
-                  Download Resume
-                </a>
-              </div>
             </div>
           </motion.div>
         )}
