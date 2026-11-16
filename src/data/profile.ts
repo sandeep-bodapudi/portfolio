@@ -2,7 +2,7 @@ const whatsappNumber = '917075196267';
 const whatsappText = 'Hi Sandeep, I saw your portfolio and want to discuss a project.';
 
 export const profile = {
-  name: 'Sandeep Bodapudi',
+  name: 'Sandeep Kumar Bodapudi',
   label: 'Freelance software developer · Hyderabad',
   headline: ['I build the', 'software your', 'business'],
   headlineAccent: 'runs on.',
