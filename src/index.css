@@ -616,6 +616,9 @@ textarea:focus-visible {
   }
   .brand {
     font-size: 16px;
+    white-space: normal;
+    line-height: 1.1;
+    max-width: 9em;
   }
   .dark .brand {
     font-size: 13px;
