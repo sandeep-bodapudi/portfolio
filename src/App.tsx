@@ -1,53 +1,71 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { MotionConfig } from 'framer-motion';
-import ScrollProgress from './components/ScrollProgress';
-import Marquee from './components/Marquee';
-import { work } from './data/work';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
-import TechStack from './sections/TechStack';
-import Projects from './sections/Projects';
-import Experience from './sections/Experience';
+import Services from './sections/Services';
+import Work from './sections/Work';
+import Process from './sections/Process';
 import About from './sections/About';
 import Contact from './sections/Contact';
+import { profile } from './data/profile';
+
+function storedTheme(): string | null {
+  try {
+    return localStorage.getItem('theme');
+  } catch {
+    return null;
+  }
+}
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  // index.html sets the class before first paint; read it back so state matches.
+  const [darkMode, setDarkMode] = useState(() => document.documentElement.classList.contains('dark'));
 
   useEffect(() => {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setDarkMode(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    document.documentElement.classList.toggle('dark', darkMode);
   }, [darkMode]);
 
-  const toggleDarkMode = () => setDarkMode(!darkMode);
+  // Follow the device setting until the visitor picks a theme themselves.
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const onChange = (e: MediaQueryListEvent) => {
+      if (!storedTheme()) setDarkMode(e.matches);
+    };
+    media.addEventListener('change', onChange);
+    return () => media.removeEventListener('change', onChange);
+  }, []);
+
+  const toggleDarkMode = () => {
+    const next = !darkMode;
+    setDarkMode(next);
+    try {
+      localStorage.setItem('theme', next ? 'dark' : 'light');
+    } catch {
+      // Storage can be blocked; the toggle still works for this visit.
+    }
+  };
 
   return (
     <MotionConfig reducedMotion="user">
-    <div className="min-h-screen overflow-x-hidden flex flex-col w-full relative">
-      <ScrollProgress />
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <main>
         <Hero />
-        <Marquee items={work.map((w) => w.title)} />
-        <Projects />
-        <Experience />
-        <TechStack />
+        <Services />
+        <Work />
+        <Process />
         <About />
         <Contact />
       </main>
-      <footer className="py-8 text-center text-sm text-stone-500 dark:text-stone-400 border-t border-stone-200 dark:border-stone-800 mt-20">
-        <p>© {new Date().getFullYear()} Sandeep Kumar Bodapudi</p>
+      <footer className="wrap">
+        <div className="footer">
+          <span>© {new Date().getFullYear()} {profile.name}</span>
+          <span>
+            <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+            {' · '}
+            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </span>
+        </div>
       </footer>
-    </div>
     </MotionConfig>
   );
 }

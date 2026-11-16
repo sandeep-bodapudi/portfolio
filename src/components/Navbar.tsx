@@ -1,87 +1,32 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Moon, Sun } from 'lucide-react';
+import { profile } from '../data/profile';
 
-const navLinks = [
-  { name: 'Home', href: '#home' },
+const links = [
   { name: 'Work', href: '#work' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Skills', href: '#skills' },
+  { name: 'Services', href: '#services' },
+  { name: 'Process', href: '#process' },
   { name: 'About', href: '#about' },
-  { name: 'Contact', href: '#contact' },
 ];
 
-export default function Navbar({ darkMode, toggleDarkMode }: { darkMode: boolean, toggleDarkMode: () => void }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+export default function Navbar({ darkMode, toggleDarkMode }: { darkMode: boolean; toggleDarkMode: () => void }) {
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass-nav py-3' : 'bg-transparent py-5'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          <a href="#home" className="text-xl font-bold tracking-tight text-stone-900 dark:text-white">
-            SKB.
-          </a>
-
-          <nav className="hidden md:flex items-center gap-8">
-            <ul className="flex items-center gap-6">
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  <a href={link.href} className="text-sm font-medium text-stone-600 hover:text-primary dark:text-stone-300 dark:hover:text-primary transition-colors">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <div className="flex items-center gap-4 border-l border-stone-200 dark:border-stone-700 pl-4">
-              <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors" aria-label="Toggle Dark Mode">
-                {darkMode ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-stone-600" />}
-              </button>
-            </div>
+    <header className="nav">
+      <div className="wrap">
+        <div className="nav-inner">
+          <a href="#home" className="brand">{profile.name}</a>
+          <nav className="nav-links mono" aria-label="Sections">
+            {links.map((link) => (
+              <a key={link.name} href={link.href}>{link.name}</a>
+            ))}
           </nav>
-
-          <div className="flex items-center gap-4 md:hidden">
-            <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors" aria-label="Toggle Dark Mode">
-              {darkMode ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-stone-600" />}
+          <div className="nav-actions">
+            <button onClick={toggleDarkMode} className="icon-btn" aria-label={darkMode ? 'Switch to light theme' : 'Switch to dark theme'}>
+              {darkMode ? <Sun size={17} /> : <Moon size={17} />}
             </button>
-            <button onClick={() => setIsOpen(!isOpen)} className="text-stone-900 dark:text-white p-2" aria-label={isOpen ? 'Close menu' : 'Open menu'} aria-expanded={isOpen}>
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <a href={profile.whatsapp} target="_blank" rel="noopener noreferrer" className="pill">WhatsApp me</a>
           </div>
         </div>
       </div>
-
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full glass-nav border-b border-stone-200 dark:border-stone-800 md:hidden"
-          >
-            <div className="px-4 pt-2 pb-6 space-y-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-3 py-3 text-base font-medium text-stone-700 dark:text-stone-200 hover:text-primary dark:hover:text-primary hover:bg-stone-50 dark:hover:bg-stone-800/50 rounded-lg"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </header>
   );
 }
